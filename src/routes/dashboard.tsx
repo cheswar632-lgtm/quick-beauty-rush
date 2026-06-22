@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { Header } from "@/components/Header";
+import { BottomNav } from "@/components/BottomNav";
 import { dealStore, type Category } from "@/lib/store";
 
 export const Route = createFileRoute("/dashboard")({
