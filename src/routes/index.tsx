@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Header } from "@/components/Header";
+import { BottomNav } from "@/components/BottomNav";
 import { DealCard } from "@/components/DealCard";
 import { useDeals, type Category } from "@/lib/store";
 
