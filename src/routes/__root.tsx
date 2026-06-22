@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
+      { title: "Slump — Live Salon Deals in Pune" },
       { name: "description", content: "Pune Beauty Rush is a mobile-first web app connecting users with flash deals from Pune's luxury beauty salons." },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Lovable App" },
