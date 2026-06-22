@@ -44,6 +44,15 @@ function Home() {
     <div className="min-h-screen bg-background pb-20 sm:pb-8">
       <Header />
       <main className="mx-auto max-w-2xl px-5 pb-16">
+        <div className="mt-4 rounded-2xl bg-primary px-5 py-4 text-primary-foreground shadow-lg shadow-primary/20">
+          <div className="text-[14px] font-semibold uppercase tracking-wider opacity-90">
+            LIVE DEALS IN PUNE
+          </div>
+          <div className="mt-1 text-base font-medium">
+            Save up to 50% at luxury salons today only
+          </div>
+        </div>
+
         <section className="pt-8 pb-6">
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
