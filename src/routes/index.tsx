@@ -89,6 +89,7 @@ function Home() {
           )}
         </div>
       </main>
+      <BottomNav />
     </div>
   );
 }
