@@ -99,6 +99,7 @@ function Home() {
           )}
         </div>
       </main>
+      <Footer />
       <BottomNav />
     </div>
   );
