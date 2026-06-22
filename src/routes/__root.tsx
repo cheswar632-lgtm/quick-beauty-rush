@@ -87,12 +87,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Pune Beauty Rush is a mobile-first web app connecting users with flash deals from Pune's luxury beauty salons." },
+      { name: "twitter:title", content: "Slump" },
+      { name: "twitter:description", content: "Flash deals at luxury salons in Pune — up to 50% off, right now." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/afbc5667-2b55-42d5-a99c-0e2edb9ebe43/id-preview-89f22733--9aa182dd-45fd-4375-8968-6203dac9534f.lovable.app-1782122104743.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/afbc5667-2b55-42d5-a99c-0e2edb9ebe43/id-preview-89f22733--9aa182dd-45fd-4375-8968-6203dac9534f.lovable.app-1782122104743.png" },
     ],
     links: [
+      {
+        rel: "icon",
+        href: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">%E2%9C%82</text></svg>',
+      },
       {
         rel: "stylesheet",
         href: appCss,
