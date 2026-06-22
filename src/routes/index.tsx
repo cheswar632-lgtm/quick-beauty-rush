@@ -9,16 +9,16 @@ import { useDeals, type Category } from "@/lib/store";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Slump — Flash Beauty Deals in Pune" },
+      { title: "Slump — Live Salon Deals in Pune" },
       {
         name: "description",
         content:
-          "Live flash deals from Pune's top salons. 35–50% off when there's a slump in their bookings. Book instantly.",
+          "Flash deals at luxury salons in Pune — up to 50% off, right now.",
       },
-      { property: "og:title", content: "Slump — Flash Beauty Deals in Pune" },
+      { property: "og:title", content: "Slump" },
       {
         property: "og:description",
-        content: "Live 2-hour flash deals from Pune's top salons. Up to 50% off.",
+        content: "Flash deals at luxury salons in Pune — up to 50% off, right now.",
       },
     ],
   }),
