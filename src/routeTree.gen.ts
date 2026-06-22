@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DealIdRouteImport } from './routes/deal.$id'
 import { Route as BookIdRouteImport } from './routes/book.$id'
 
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/dashboard': typeof DashboardRoute
+  '/search': typeof SearchRoute
   '/book/$id': typeof BookIdRoute
   '/deal/$id': typeof DealIdRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/dashboard': typeof DashboardRoute
+  '/search': typeof SearchRoute
   '/book/$id': typeof BookIdRoute
   '/deal/$id': typeof DealIdRoute
 }
@@ -60,27 +68,49 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/dashboard': typeof DashboardRoute
+  '/search': typeof SearchRoute
   '/book/$id': typeof BookIdRoute
   '/deal/$id': typeof DealIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/dashboard' | '/book/$id' | '/deal/$id'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/dashboard'
+    | '/search'
+    | '/book/$id'
+    | '/deal/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/dashboard' | '/book/$id' | '/deal/$id'
-  id: '__root__' | '/' | '/about' | '/dashboard' | '/book/$id' | '/deal/$id'
+  to: '/' | '/about' | '/dashboard' | '/search' | '/book/$id' | '/deal/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/dashboard'
+    | '/search'
+    | '/book/$id'
+    | '/deal/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   DashboardRoute: typeof DashboardRoute
+  SearchRoute: typeof SearchRoute
   BookIdRoute: typeof BookIdRoute
   DealIdRoute: typeof DealIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -123,6 +153,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   DashboardRoute: DashboardRoute,
+  SearchRoute: SearchRoute,
   BookIdRoute: BookIdRoute,
   DealIdRoute: DealIdRoute,
 }
