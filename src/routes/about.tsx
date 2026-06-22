@@ -83,6 +83,7 @@ function About() {
           </Link>
         </div>
       </main>
+      <BottomNav />
     </div>
   );
 }
