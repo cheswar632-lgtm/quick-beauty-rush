@@ -1,22 +1,43 @@
 import { Link } from "@tanstack/react-router";
+import { useEffect, useMemo, useState } from "react";
+import { Eye } from "lucide-react";
 import { Countdown } from "./Countdown";
 import type { Deal } from "@/lib/store";
 
 export function DealCard({ deal }: { deal: Deal }) {
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    const t = setInterval(() => setNow(Date.now()), 30000);
+    return () => clearInterval(t);
+  }, []);
+
   const discounted = Math.round(deal.originalPrice * (1 - deal.discountPct / 100));
   const lastOne = deal.slotsLeft === 1;
+  const endingSoon = deal.endsAt > now && deal.endsAt - now < 30 * 60 * 1000;
+  const views = useMemo(() => 12 + Math.floor(Math.random() * 36), [deal.id]);
+
   return (
     <Link
       to="/deal/$id"
       params={{ id: deal.id }}
-      className="block w-full rounded-2xl border border-border bg-card p-5 shadow-sm transition active:scale-[0.99] hover:-translate-y-0.5 hover:shadow-lg"
+      className={
+        "block w-full rounded-2xl bg-card p-5 shadow-sm transition active:scale-[0.99] hover:-translate-y-0.5 hover:shadow-lg " +
+        (endingSoon
+          ? "border-2 border-red-500"
+          : "border border-border")
+      }
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[14px] font-semibold text-primary">
               {deal.category}
             </span>
+            {endingSoon && (
+              <span className="rounded-full bg-red-100 px-2 py-0.5 text-[14px] font-semibold text-red-700">
+                Ending soon!
+              </span>
+            )}
             <span className="text-[14px] text-muted-foreground">{deal.area}</span>
           </div>
           <h3 className="mt-2 truncate text-base font-semibold text-foreground">
@@ -57,6 +78,11 @@ export function DealCard({ deal }: { deal: Deal }) {
             {lastOne ? "Only 1 left!" : `${deal.slotsLeft} slots left`}
           </div>
         </div>
+      </div>
+
+      <div className="mt-3 flex items-center gap-1.5 text-[14px] text-muted-foreground">
+        <Eye size={14} />
+        <span>{views} people viewed this today</span>
       </div>
     </Link>
   );

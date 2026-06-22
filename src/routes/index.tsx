@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { Header } from "@/components/Header";
 import { BottomNav } from "@/components/BottomNav";
 import { DealCard } from "@/components/DealCard";
+import { Footer } from "@/components/Footer";
 import { useDeals, type Category } from "@/lib/store";
 
 export const Route = createFileRoute("/")({
