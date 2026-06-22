@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
+import { BottomNav } from "@/components/BottomNav";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
