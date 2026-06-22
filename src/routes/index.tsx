@@ -40,7 +40,7 @@ function Home() {
   );
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20 sm:pb-8">
       <Header />
       <main className="mx-auto max-w-2xl px-5 pb-16">
         <section className="pt-8 pb-6">
