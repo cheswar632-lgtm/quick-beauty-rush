@@ -102,6 +102,7 @@ function Dashboard() {
           </button>
         </form>
       </main>
+      <BottomNav />
     </div>
   );
 }
