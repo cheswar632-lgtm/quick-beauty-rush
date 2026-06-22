@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
+import { BottomNav } from "@/components/BottomNav";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/about")({
 
 function About() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20 sm:pb-8">
       <Header />
       <main className="mx-auto max-w-2xl px-5 py-10">
         <div className="text-xs font-semibold uppercase tracking-wider text-primary">
@@ -82,6 +83,7 @@ function About() {
           </Link>
         </div>
       </main>
+      <BottomNav />
     </div>
   );
 }

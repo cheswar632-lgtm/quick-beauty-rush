@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Header } from "@/components/Header";
+import { BottomNav } from "@/components/BottomNav";
 import { DealCard } from "@/components/DealCard";
 import { useDeals, type Category } from "@/lib/store";
 
@@ -39,7 +40,7 @@ function Home() {
   );
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20 sm:pb-8">
       <Header />
       <main className="mx-auto max-w-2xl px-5 pb-16">
         <section className="pt-8 pb-6">
@@ -88,6 +89,7 @@ function Home() {
           )}
         </div>
       </main>
+      <BottomNav />
     </div>
   );
 }

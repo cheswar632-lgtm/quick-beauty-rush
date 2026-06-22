@@ -109,24 +109,24 @@ function DealDetail() {
         </div>
       </main>
 
-      <div className="fixed inset-x-0 bottom-0 border-t border-border bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-2xl items-center justify-between gap-3 px-5 py-3">
-          <div>
-            <div className="text-xs text-muted-foreground">
-              {deal.slotsLeft} {deal.slotsLeft === 1 ? "slot" : "slots"} left
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur">
+        <div className="mx-auto flex max-w-2xl items-center justify-between gap-3 px-4 py-3 sm:px-5">
+          <div className="min-w-0">
+            <div className="text-[14px] text-muted-foreground">
+              {deal.slotsLeft === 1 ? "Only 1 slot left!" : `${deal.slotsLeft} slots left`}
             </div>
             <div className="text-lg font-bold text-foreground">
               ₹{discounted}{" "}
-              <span className="text-sm font-normal text-muted-foreground line-through">
+              <span className="text-[14px] font-normal text-muted-foreground line-through">
                 ₹{deal.originalPrice}
               </span>
             </div>
           </div>
           <button
             onClick={() => navigate({ to: "/book/$id", params: { id: deal.id } })}
-            className="rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition hover:opacity-90"
+            className="flex-1 max-w-[60%] rounded-2xl bg-primary px-6 py-4 text-base font-bold text-primary-foreground shadow-lg shadow-primary/30 transition active:scale-[0.98] hover:opacity-90 sm:flex-initial sm:max-w-none"
           >
-            Book Now
+            Book Now →
           </button>
         </div>
       </div>

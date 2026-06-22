@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { Header } from "@/components/Header";
+import { BottomNav } from "@/components/BottomNav";
 import { dealStore, type Category } from "@/lib/store";
 
 export const Route = createFileRoute("/dashboard")({
@@ -37,7 +38,7 @@ function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-24 sm:pb-8">
       <Header />
       <main className="mx-auto max-w-2xl px-5 py-8">
         <div className="text-xs font-semibold uppercase tracking-wider text-primary">
@@ -101,6 +102,7 @@ function Dashboard() {
           </button>
         </form>
       </main>
+      <BottomNav />
     </div>
   );
 }
