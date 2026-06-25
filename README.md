@@ -3,7 +3,7 @@
 A flash-deal beauty salon marketplace for Pune, India. Built for SuperXgen AI Startup Buildathon 2026.
 
 ## Live Site
-[View Live →](YOUR_LOVABLE_URL_HERE)
+[View Live →](https://quick-beauty-rush.lovable.app/)
 
 ## The Problem
 Luxury salons operate at 90%+ capacity on weekends but under 25% on weekday afternoons — while rent and staff costs run 100% every day.
